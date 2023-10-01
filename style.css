@@ -1,0 +1,2535 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    color: #fff;
+    background:  #09001d;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d)
+}
+
+.navbar a {
+    font-size: 18;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: lightseagreen;
+
+}
+
+.main {
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+    transition: .3s ease;
+}
+
+.main.active {
+    filter: blur(15px);
+    pointer-events: none;
+    width: 200%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+
+.story {
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-content {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.story-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.story-content p {
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.story-content .start-btn {
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: 200px;
+    height: 55px;
+    background: blue;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.story-content .start-btn:hover {
+    background: transparent;
+}
+
+.popup-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: whitesmoke;
+    border-radius: 6px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.popup-info.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-info h2 {
+    font-size: 35px;
+    color: darkblue;
+}
+
+.popup-info .info {
+    display: inline-block;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.popup-info .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+
+.popup-info .btn-group .info-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background-color: darkblue;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1) {
+    background: transparent;
+    color: darkblue
+}
+
+.popup-info .btn-group .info-btn:nth-child(1):hover {
+    background: darkblue;
+    color: #fff;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2) {
+    background: transparent;
+    color: darkblue
+}
+
+.popup-info .btn-group .info-btn:nth-child(2):hover {
+    background: darkblue;
+    color: #fff;
+}
+
+
+.simulation-section {
+    position: relative;
+    Left: -50%;
+    /*Left: 0;*/
+    width: 100%;
+    background: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+    z-index: 100;
+}
+
+.simulation-section.active {
+    left: 0;
+}
+
+.simulation-section .simulation-box {
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+
+.simulation-section .simulation-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
+.simulation-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.simulation-box .simulation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-bottom: 2px solid white;
+    margin-bottom: 30px;
+
+}
+
+.simulation-header span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.simulation-box .question-text {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.simulation-box .simulation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid white;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.simulation-footer .back-btn {
+    width: 100px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.simulation-footer .back-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .strongdemand-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .strongdemand-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .weakdemand-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .weakdemand-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.strongdemand-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.strongdemand-section .strongdemand.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.strongdemand-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf1-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf1-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf2-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf2-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf3-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf3-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.strongdemand-footer .back2-btn {
+    margin-top: 30px;
+    width: 100px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.strongdemand-footer .back2-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.weakdemand-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.weakdemand-section .weakdemand.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.weakdemand-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf1-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf1-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf2-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf2-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf3-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf3-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.weakdemand-footer .back2-btn {
+    margin-top: 30px;
+    width: 100px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.weakdemand-footer .back2-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf1-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf1-section .sdf1.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf1-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf1X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf1X:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf2-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf2-section .sdf2.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf2-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf2X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf2X-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf3-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf3-section .sdf3.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf3-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf3X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf3X-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf1X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf1X-section .sdf1X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf1X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf1A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf1A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf1B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf1B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf1C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf1C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf2X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf2X-section .sdf2X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf2X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf2A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf2A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf2B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf2B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf2C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf2C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf3X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf3X-section .sdf3X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf3X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .sdf3A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf3A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf3B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf3B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .sdf3C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .sdf3C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf1-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf1-section .wdf1.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf1-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf1X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf1X-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf2-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf2-section .wdf2.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf2-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf2X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf2X-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf3-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3-section .wdf3.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf3X-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf3X-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdtryagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdtryagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf1X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf1X-section .wdf1X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf1X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf1A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf1A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf1B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf1B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf1C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf1C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf2X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf2X-section .wdf2X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf2X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf2A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf2A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf2B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf2B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf2C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf2C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf3X-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3X-section .wdf3X.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3X-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.option-list .wdf3A-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf3A-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf3B-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf3B-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.option-list .wdf3C-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.option-list .wdf3C-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf1A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf1A-section .sdf3A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf1A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf1A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf1A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf1B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf1B-section .sdf3B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf1B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf1B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf1B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf1C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf1C-section .sdf3C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf1C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf1C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf1C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf2A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf2A-section .sdf2A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf2A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf2A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf2A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf2B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf2B-section .sdf2B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf2B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf2B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf2B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf2C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf2C-section .sdf2C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf2C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf2C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf2C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf3A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf3A-section .sdf3A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf3A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf3A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf3A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf3B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf3B-section .sdf3B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf3B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf3B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf3B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.sdf3C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.sdf3C-section .sdf3C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.sdf3C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.sdf3C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sdf3C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf1A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf1A-section .wdf1A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf1A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf1A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf1A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf1B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf1B-section .wdf1B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf1B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf1B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf1B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf1C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf1C-section .wdf1C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf1C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf1C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf1C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf2A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf2A-section .wdf2A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf2A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf2A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf2A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf2B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf2B-section .wdf2B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf2B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf2B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf2B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf2C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf2C-section .wdf2C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf2C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf2C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf2C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf3A-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3A-section .wdf3A.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3A-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf3A-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf3A-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf3B-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3B-section .wdf3B.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3B-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf3B-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf3B-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+.wdf3C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3C-section .wdf3C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf3C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf3C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

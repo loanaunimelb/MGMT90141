@@ -1,0 +1,53 @@
+.wdf3C-section {
+    position: absolute;
+    background-position: center;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width: 500px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    top: 25%;
+    left:33.33%;
+}
+
+.wdf3C-section .wdf3C.box {
+position: relative;
+width: 500px;
+background: transparent;
+border: 3px solid white;
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+padding: 20px 60px;
+opacity: 0;
+pointer-events: none;
+transform: scale(.9);
+}
+
+.wdf3C-box h1 {
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, navy, transparent);
+    border-radius: 6px;
+}
+
+.wdf3C-box .playagain-btn {
+    width: 200px;
+    height: 45px;
+    background: navy;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.wdf3C-box .playagain-btn:hover {
+    background: white;
+    border-color: white;
+    color: navy;
+}
