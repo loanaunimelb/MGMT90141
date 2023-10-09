@@ -30,4 +30,4 @@ update_test_branch:
     - git commit -m "Update test branch with changes from data-server branch"
 
     # Push the changes to the test branch
-    - git push https://oauth2:${ACCESS_TOKEN}@gitlab-ee.unimelb.edu.au/enterpriseapps/InfrastructureApps/eia-simgame/eia-simgame.git dev
+    - git push https://oauth2:${ACCESS_TOKEN}@gitlab-ee.unimelb.edu.au/enterpriseapps/InfrastructureApps/eia-simgame/eia-simgame.git test
