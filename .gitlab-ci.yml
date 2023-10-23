@@ -3,7 +3,7 @@ stages:
 update_prod_branch:
   stage: update_prod_branch
   only:
-    - testing # Trigger the pipeline only when the main branch is updated
+    - production # Trigger the pipeline only when the main branch is updated
   before_script:
     - apk update # Update package lists (optional, but recommended)
     - apk add git # Install Git
