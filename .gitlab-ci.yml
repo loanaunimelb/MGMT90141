@@ -1,7 +1,7 @@
 stages:
-  - update_test_branch
-update_test_branch:
-  stage: update_test_branch
+  - update_prod_branch
+update_prod_branch:
+  stage: update_prod_branch
   only:
     - testing # Trigger the pipeline only when the main branch is updated
   before_script:
@@ -18,16 +18,16 @@ update_test_branch:
     - cd eia-simgame
     # Create a temporary directory to extract the files from the main branch
     - mkdir /tmp/src
-    - git checkout testing
+    - git checkout production
     - cp -R * /tmp/src
-    - git checkout test
+    - git checkout prod
     - rm -rf src
     - cp -R /tmp/src src
 
 
     # Add changes and commit
     - git add src/
-    - git commit -m "Update test branch with changes from data-server branch"
+    - git commit -m "Update prod branch with changes from production branch"
 
     # Push the changes to the test branch
-    - git push https://oauth2:${ACCESS_TOKEN}@gitlab-ee.unimelb.edu.au/enterpriseapps/InfrastructureApps/eia-simgame/eia-simgame.git test
+    - git push https://oauth2:${ACCESS_TOKEN}@gitlab-ee.unimelb.edu.au/enterpriseapps/InfrastructureApps/eia-simgame/eia-simgame.git prod
